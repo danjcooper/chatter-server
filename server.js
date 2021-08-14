@@ -1,5 +1,7 @@
 const httpServer = require("http").createServer();
 
+const port = process.env.PORT || 3000
+
 const io = require("socket.io")(httpServer, {
   cors: {
     origin: "*",
@@ -21,5 +23,5 @@ io.on("connection", (socket) => {
 });
 
 
-httpServer.listen(3000, () => console.log("hey"));
+httpServer.listen(port, () => console.log("hey"));
 
